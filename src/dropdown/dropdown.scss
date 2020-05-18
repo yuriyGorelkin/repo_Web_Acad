@@ -1,0 +1,12 @@
+.dropdown {
+    position: relative;
+    display: block;
+    border: 1px solid red;
+    width: 300px;
+    margin: 0 auto;
+    &__options {
+        width: 100%;
+        position: absolute;
+        background-color: gold;        
+    }
+}

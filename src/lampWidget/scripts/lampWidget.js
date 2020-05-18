@@ -9,9 +9,11 @@ function lighterWidget(rootElSelector) {
     lamps.forEach(lamp => {
         let btn = lamp.querySelector('.lamp__toggler');
         btn.addEventListener('click', lampsToggle);
+        
 
         function lampsToggle() {
             lamp.classList.toggle('lampActive');
+            btn.classList.toggle('lampActive');
             isInabled = true;
         }
     });

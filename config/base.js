@@ -12,8 +12,9 @@ const baseConf = (_path) => {
         index: ['babel-polyfill', './src/index/index.js'],        
         'adaptive_bootstrap': ['babel-polyfill', './src/adaptive_bootstrap/adaptive_bootstrap.js'],
         'lampWidget': ['babel-polyfill', './src/lampWidget/lampWidget.js'],
-        'lighter': ['babel-polyfill', './src/lighter/lighter.js']
-      
+        'lighter': ['babel-polyfill', './src/lighter/lighter.js'],
+        'dropdown': ['babel-polyfill', './src/dropdown/dropdown.js'],      
+        'class_lighter': ['babel-polyfill', './src/class_lighter/class_lighter.js']      
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {

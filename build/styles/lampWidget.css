@@ -32,6 +32,8 @@
     outline: none;
     padding: 5px 0;
     margin-top: 10px; }
+    .lamp-Widget .globalSwitcher.lampActive {
+      background: linear-gradient(yellow, red); }
 
 * {
   box-sizing: border-box; }

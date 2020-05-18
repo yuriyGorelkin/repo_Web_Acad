@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 333);
+/******/ 	return __webpack_require__(__webpack_require__.s = 340);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9022,84 +9022,42 @@ module.exports = function (regExp, replace) {
 /* 330 */,
 /* 331 */,
 /* 332 */,
-/* 333 */
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(334);
+module.exports = __webpack_require__(341);
 
 
 /***/ }),
-/* 334 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(335);
+__webpack_require__(342);
 
-__webpack_require__(336);
+__webpack_require__(343);
 
 /***/ }),
-/* 335 */
+/* 342 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 336 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 343 */
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-function lighterWidget(rootElSelector) {
-    var rootElement = document.querySelector(rootElSelector);
-    var lamps = rootElement.querySelectorAll('.lamp');
-    var globalSwitcher = rootElement.querySelector('.globalSwitcher');
-
-    var isInabled = true;
-
-    lamps.forEach(function (lamp) {
-        var btn = lamp.querySelector('.lamp__toggler');
-        btn.addEventListener('click', lampsToggle);
-
-        function lampsToggle() {
-            lamp.classList.toggle('lampActive');
-            btn.classList.toggle('lampActive');
-            isInabled = true;
-        }
-    });
-
-    globalSwitcher.addEventListener('click', switchAll);
-
-    function switchAll() {
-        if (isInabled) {
-            offAll();
-        } else {
-            onAll();
-        }
-    }
-
-    function offAll() {
-        lamps.forEach(function (lamp) {
-            lamp.classList.remove('lampActive');
-        });
-        isInabled = false;
-    }
-
-    function onAll() {
-        lamps.forEach(function (lamp) {
-            lamp.classList.add('lampActive');
-        });
-        isInabled = true;
-    }
-
-    switchAll();
-}
-
-lighterWidget('#lamps1');
-lighterWidget('#lamps2');
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

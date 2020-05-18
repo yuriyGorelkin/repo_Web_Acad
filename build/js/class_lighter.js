@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 333);
+/******/ 	return __webpack_require__(__webpack_require__.s = 344);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9022,84 +9022,119 @@ module.exports = function (regExp, replace) {
 /* 330 */,
 /* 331 */,
 /* 332 */,
-/* 333 */
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(334);
+module.exports = __webpack_require__(345);
 
 
 /***/ }),
-/* 334 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(335);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(336);
+__webpack_require__(346);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Lighter = function () {
+    function Lighter(rootElSelector) {
+        _classCallCheck(this, Lighter);
+
+        this.rootElement = document.querySelector(rootElSelector);
+        this.lamps = this.rootElement.querySelectorAll('.lighter__lamp');
+        this.btnSwitcher = this.rootElement.querySelector('.lighter__switcher');
+
+        this.isEnable = false;
+        this.activateLight = this.activateLight.bind(this);
+    }
+
+    _createClass(Lighter, [{
+        key: 'init',
+        value: function init() {
+            this.switchLighter();
+        }
+    }, {
+        key: 'toggleLight',
+        value: function toggleLight() {
+            var _this = this;
+
+            this.lamps.forEach(function (lamp) {
+                lamp.addEventListener('click', _this.activateLight);
+            });
+            this.btnSwitcher.classList.add('activate');
+        }
+    }, {
+        key: 'activateLight',
+        value: function activateLight() {
+            this.offAllLight();
+            event.target.classList.add('activate');
+        }
+    }, {
+        key: 'switchLighter',
+        value: function switchLighter() {
+            var _this2 = this;
+
+            this.btnSwitcher.addEventListener('click', function () {
+                if (!_this2.isEnable) {
+                    _this2.isEnable = true;
+                    _this2.toggleLight();
+                } else {
+                    _this2.offAllLight();
+                    _this2.deactivateLights();
+                    _this2.isEnable = false;
+                }
+            });
+        }
+    }, {
+        key: 'offAllLight',
+        value: function offAllLight() {
+            this.lamps.forEach(function (lamp) {
+                lamp.classList.remove('activate');
+            });
+        }
+    }, {
+        key: 'deactivateLights',
+        value: function deactivateLights() {
+            var _this3 = this;
+
+            this.lamps.forEach(function (lamp) {
+                lamp.removeEventListener('click', _this3.activateLight);
+            });
+            this.btnSwitcher.classList.remove('activate');
+        }
+    }]);
+
+    return Lighter;
+}();
+
+var lighter1 = new Lighter('.LighterW1');
+lighter1.init();
+
+var lighter2 = new Lighter('.LighterW2');
+lighter2.init();
 
 /***/ }),
-/* 335 */
+/* 346 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 336 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function lighterWidget(rootElSelector) {
-    var rootElement = document.querySelector(rootElSelector);
-    var lamps = rootElement.querySelectorAll('.lamp');
-    var globalSwitcher = rootElement.querySelector('.globalSwitcher');
-
-    var isInabled = true;
-
-    lamps.forEach(function (lamp) {
-        var btn = lamp.querySelector('.lamp__toggler');
-        btn.addEventListener('click', lampsToggle);
-
-        function lampsToggle() {
-            lamp.classList.toggle('lampActive');
-            btn.classList.toggle('lampActive');
-            isInabled = true;
-        }
-    });
-
-    globalSwitcher.addEventListener('click', switchAll);
-
-    function switchAll() {
-        if (isInabled) {
-            offAll();
-        } else {
-            onAll();
-        }
-    }
-
-    function offAll() {
-        lamps.forEach(function (lamp) {
-            lamp.classList.remove('lampActive');
-        });
-        isInabled = false;
-    }
-
-    function onAll() {
-        lamps.forEach(function (lamp) {
-            lamp.classList.add('lampActive');
-        });
-        isInabled = true;
-    }
-
-    switchAll();
-}
-
-lighterWidget('#lamps1');
-lighterWidget('#lamps2');
 
 /***/ })
 /******/ ]);
