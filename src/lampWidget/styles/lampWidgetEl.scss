@@ -1,0 +1,55 @@
+.lamp-Widget {
+    width: 70px;
+    margin: 10px 30px;
+    box-shadow: 0 0 2px 2px rgb(190, 190, 190);
+    display: inline-block;
+
+    & .lamp {
+        border: 1px solid rgb(190, 190, 190);
+        width: 100%;
+
+        &__lighter {
+            width: 60px;
+            height: 60px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            margin: 10px auto;
+        }
+
+        &__toggler {
+            display: block;
+            width: 100%;
+            color: black;
+            background: linear-gradient(white, grey);
+            outline: none;
+        }
+    }
+
+    & .lampActive {
+        &:nth-child(odd) {
+            .lamp__lighter {
+                background-color: yellow;
+            }
+        }
+
+        &:nth-child(even) {
+            .lamp__lighter {
+                background-color: rgb(32, 240, 255);
+            }
+        }
+
+        & .lamp__toggler {
+            background: linear-gradient(red, yellow);
+        }
+    }
+
+    & .globalSwitcher {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(rgb(104, 195, 238), grey);
+        outline: none;
+        padding: 5px 0;
+        margin-top: 10px;
+    }
+}

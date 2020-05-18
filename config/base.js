@@ -10,7 +10,8 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],        
-        'adaptive_bootstrap': ['babel-polyfill', './src/adaptive_bootstrap/adaptive_bootstrap.js']
+        'adaptive_bootstrap': ['babel-polyfill', './src/adaptive_bootstrap/adaptive_bootstrap.js'],
+        'lampWidget': ['babel-polyfill', './src/lampWidget/lampWidget.js']
       
     };
 

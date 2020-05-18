@@ -1,0 +1,49 @@
+.lamp-Widget {
+  width: 70px;
+  margin: 10px 30px;
+  box-shadow: 0 0 2px 2px #bebebe;
+  display: inline-block; }
+  .lamp-Widget .lamp {
+    border: 1px solid #bebebe;
+    width: 100%; }
+    .lamp-Widget .lamp__lighter {
+      width: 60px;
+      height: 60px;
+      border: 1px solid grey;
+      border-radius: 50%;
+      margin: 10px auto; }
+    .lamp-Widget .lamp__toggler {
+      display: block;
+      width: 100%;
+      color: black;
+      background: linear-gradient(white, grey);
+      outline: none; }
+  .lamp-Widget .lampActive:nth-child(odd) .lamp__lighter {
+    background-color: yellow; }
+  .lamp-Widget .lampActive:nth-child(even) .lamp__lighter {
+    background-color: #20f0ff; }
+  .lamp-Widget .lampActive .lamp__toggler {
+    background: linear-gradient(red, yellow); }
+  .lamp-Widget .globalSwitcher {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(#68c3ee, grey);
+    outline: none;
+    padding: 5px 0;
+    margin-top: 10px; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  min-height: 100%;
+  height: 100%; }
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  height: 100%; }
