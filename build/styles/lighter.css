@@ -1,0 +1,22 @@
+.lighter-Widget {
+  width: 70px;
+  margin: 50px auto; }
+  .lighter-Widget .lighter {
+    border: 1px solid grey; }
+  .lighter-Widget .lighter__lamp {
+    margin: 10px auto;
+    width: 60px;
+    height: 60px;
+    border: 1px solid grey;
+    border-radius: 50%; }
+    .lighter-Widget .lighter__lamp.red.activate {
+      background-color: red; }
+    .lighter-Widget .lighter__lamp.yellow.activate {
+      background-color: yellow; }
+    .lighter-Widget .lighter__lamp.green.activate {
+      background-color: green; }
+  .lighter-Widget .lighter__switcher {
+    display: block;
+    width: 100%;
+    background: linear-gradient(white, grey);
+    outline: none; }

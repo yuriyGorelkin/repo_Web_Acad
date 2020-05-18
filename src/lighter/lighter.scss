@@ -1,0 +1,41 @@
+.lighter-Widget {
+    width: 70px;
+    margin: 50px auto;
+
+    & .lighter {
+        border: 1px solid grey;
+    }
+
+    & .lighter__lamp {
+        margin: 10px auto;
+        width: 60px;
+        height: 60px;
+        border: 1px solid grey;
+        border-radius: 50%;
+
+        &.red {
+            &.activate {
+                background-color: red;
+            }
+        }
+
+        &.yellow {
+            &.activate {
+                background-color: yellow;
+            }
+        }
+
+        &.green {
+            &.activate {
+                background-color: green;
+            }
+        }
+    }
+
+    & .lighter__switcher {
+        display: block;
+        width: 100%;
+        background: linear-gradient(white, grey);
+        outline: none;
+    }
+}
