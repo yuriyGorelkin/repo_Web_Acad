@@ -14,7 +14,9 @@ const baseConf = (_path) => {
         'lampWidget': ['babel-polyfill', './src/lampWidget/lampWidget.js'],
         'lighter': ['babel-polyfill', './src/lighter/lighter.js'],
         'dropdown': ['babel-polyfill', './src/dropdown/dropdown.js'],      
-        'class_lighter': ['babel-polyfill', './src/class_lighter/class_lighter.js']      
+        'class_lighter': ['babel-polyfill', './src/class_lighter/class_lighter.js'], 
+        'books-react': ['babel-polyfill', './src/books-react/books-react.js'],                
+        'traine-react': ['babel-polyfill', './src/traine-react/traine-react.js']                
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
@@ -62,6 +64,12 @@ const baseConf = (_path) => {
                         }
                     ]
                 },
+                {
+                    test: /\.jsx?$/,
+                    exclude: /(node_modules)/,
+                    use: 'babel-loader'
+
+                },                
                 {
                     test: /\.js/,
                     exclude: /(node_modules)/,

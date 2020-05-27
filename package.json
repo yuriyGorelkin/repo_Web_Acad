@@ -17,6 +17,7 @@
     "url": "git+https://github.com/IlyaLytvynov/webpack-project-seed.git"
   },
   "devDependencies": {
+    "@types/react": "^16.9.35",
     "autoprefixer": "^7.1.2",
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.24.0",
@@ -36,6 +37,8 @@
     "node-sass": "^4.8.3",
     "normalize-css": "^2.3.1",
     "normalize.less": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
     "uglify-js": "^2.8.21",

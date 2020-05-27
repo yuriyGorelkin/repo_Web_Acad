@@ -7,19 +7,21 @@ function lighter(rootElSelector) {
     const btnSwitcher = rootElement.querySelector('.lighter__switcher');
 
     let isEnable = false;
-    let oldPos = 0;
+    // let previousPosition = null;
+    let previousPosition = 0;
+   
 
     function toggleLight() {
-        lamps.forEach((lamp, i) => {           
-                lamp.addEventListener('click', activateLight);         
+        lamps.forEach((lamp, i) => {
+            lamp.addEventListener('click', activateLight);
 
             function activateLight() {
                 if (isEnable) {
                     lamp.classList.toggle('activate');
-                    if (i !== oldPos) {
-                        lamps[oldPos].classList.remove('activate');
+                    if (i !== previousPosition) {
+                        lamps[previousPosition].classList.remove('activate');
                     }
-                    oldPos = i;
+                    previousPosition = i;
                 } else {
                     lamp.removeEventListener('click', activateLight);
                 }
@@ -27,7 +29,22 @@ function lighter(rootElSelector) {
         });
     }
 
-   function switchLighter() {
+    // function activateLight() {
+    //     let target = event.target;
+
+    //     if (isEnable) {
+    //         target.classList.toggle('activate');
+    //         if (target !== previousPosition && previousPosition) {
+    //             previousPosition.classList.remove('activate');
+    //         }
+    //         previousPosition = target;
+
+    //     } else {
+    //         target.removeEventListener('click', activateLight);
+    //     }
+    // }
+
+    function switchLighter() {
         btnSwitcher.addEventListener('click', () => {
             if (!isEnable) {
                 isEnable = true;
@@ -41,7 +58,7 @@ function lighter(rootElSelector) {
 
     function offAll() {
         lamps.forEach((lamp) => {
-            lamp.classList.remove('activate');            
+            lamp.classList.remove('activate');
         });
     }
 

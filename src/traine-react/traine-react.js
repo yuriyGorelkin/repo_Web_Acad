@@ -1,0 +1,1 @@
+import './traine-react.jsx';
